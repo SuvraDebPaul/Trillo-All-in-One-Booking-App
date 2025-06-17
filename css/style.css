@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --Color-Primary: #eb2f64;
   --Color-Primary-light: #ff3366;
@@ -77,6 +78,7 @@ body {
   display: flex;
   padding: 4.5rem;
   background-color: var(--Color-Grey-light-2);
+  font-size: 1.4rem;
 }
 
 .descrition {
@@ -87,12 +89,13 @@ body {
   border-bottom: var(--border-line);
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   padding: 3rem;
-  font-size: 1.4rem;
 }
 
 .user-review {
-  background-color: aqua;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -312,7 +315,8 @@ body {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
-.overview .btn-inline {
+
+.btn-inline {
   border: none;
   color: var(--Color-Primary);
   font-family: var(--font-roboto);
@@ -324,10 +328,17 @@ body {
   cursor: pointer;
   transition: all 0.2s;
 }
-.overview .btn-inline:hover {
+.btn-inline span {
+  margin-left: 3px;
+  transition: margin-left 0.2s;
+}
+.btn-inline:hover {
   color: var(--Color-Grey-dark-3);
 }
-.overview .btn-inline:focus {
+.btn-inline:hover span {
+  margin-left: 8px;
+}
+.btn-inline:focus {
   outline: none;
   animation: pulstate 1s infinite;
 }
@@ -391,6 +402,111 @@ body {
 }
 .recomend__friends--photo:not(:last-child) {
   margin-right: -1.5rem;
+}
+
+.review {
+  background-color: var(--Color-Grey-light-1);
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  padding: 3rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.review__text {
+  margin-bottom: 2rem;
+  z-index: 10;
+  position: relative;
+}
+.review__user {
+  display: flex;
+  align-items: center;
+}
+.review__photo {
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+.review__user-box {
+  margin-right: auto;
+  font-size: 1.1rem;
+}
+.review__user-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.review__user-date {
+  font-size: 1rem;
+  color: var(--Color-Grey-dark-3);
+}
+.review__rating {
+  font-size: 2.2rem;
+  color: var(--Color-Primary);
+  font-weight: 300;
+}
+.review::before {
+  content: "“";
+  position: absolute;
+  top: -3.2rem;
+  left: -0.5rem;
+  line-height: 1;
+  font-size: 20rem;
+  color: var(--Color-Grey-light-2);
+  font-family: "sans-serif";
+  z-index: 1;
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.cta__book-now {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 3.5rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  background-image: linear-gradient(to right bottom, var(--Color-Primary-light), var(--Color-Primary-dark));
+  color: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn__visible {
+  display: inline-block;
+  padding: 2rem 7.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn__invisible {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -100%;
+  padding: 2rem 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  background-image: linear-gradient(to left bottom, var(--Color-Primary-light), var(--Color-Primary-dark));
+}
+.btn:hover .btn__visible {
+  transform: translateY(100%);
+}
+.btn:hover .btn__invisible {
+  top: 0;
+}
+.btn:focus {
+  outline: none;
+  animation: pulstate 1s infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
