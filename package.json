@@ -6,7 +6,7 @@
     "sass": "^1.89.2"
   },
   "scripts": {
-    "watch:sass": ""
+    "watch:sass": "sass sass/main.scss css/style.css --watch"
   },
   "author": "Suvra Deb Paul",
   "license": "ISC",
