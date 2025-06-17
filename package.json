@@ -1,0 +1,14 @@
+{
+  "name": "2-trillo-flex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  },
+  "scripts": {
+    "watch:sass": ""
+  },
+  "author": "Suvra Deb Paul",
+  "license": "ISC",
+  "description": "Trillo Project"
+}
