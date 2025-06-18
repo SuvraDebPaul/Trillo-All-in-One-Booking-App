@@ -31,6 +31,16 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media only screen and (max-width: 68.75rem) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -50,15 +60,33 @@ body {
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
 }
+@media only screen and (max-width: 75rem) {
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+}
 
 .header {
   height: 7rem;
   background-color: white;
   border-bottom: 1px solid var(--Color-Grey-light-1);
 }
+@media only screen and (max-width: 28.125rem) {
+  .header {
+    flex-wrap: wrap;
+    height: 10rem;
+    align-content: space-around;
+  }
+}
 
 .content {
   display: flex;
+}
+@media only screen and (max-width: 59.375rem) {
+  .content {
+    flex-direction: column;
+  }
 }
 
 .side-bar {
@@ -80,6 +108,16 @@ body {
   background-color: var(--Color-Grey-light-2);
   font-size: 1.4rem;
 }
+@media only screen and (max-width: 59.375rem) {
+  .details {
+    padding: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  .details {
+    flex-direction: column;
+  }
+}
 
 .descrition {
   background-color: #fff;
@@ -89,6 +127,18 @@ body {
   border-bottom: var(--border-line);
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   padding: 3rem;
+}
+@media only screen and (max-width: 59.375rem) {
+  .descrition {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  .descrition {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
 }
 
 .user-review {
@@ -114,6 +164,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 28.125rem) {
+  .header__search {
+    order: 1;
+    flex: 0 0 100%;
+    background-color: var(--Color-Grey-light-2);
+  }
 }
 .header__search-input {
   font-family: var(--font-roboto);
@@ -204,11 +261,22 @@ body {
   list-style: none;
   margin-top: 3rem;
 }
+@media only screen and (max-width: 59.375rem) {
+  .side-nav {
+    display: flex;
+    margin: 0;
+  }
+}
 .side-nav__item {
   position: relative;
 }
 .side-nav__item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 59.375rem) {
+  .side-nav__item:not(:last-child) {
+    margin: 0;
+  }
 }
 .side-nav__item::before {
   content: "";
@@ -228,6 +296,11 @@ body {
 .side-nav__item:active::before {
   background-color: var(--Color-Primary-light);
 }
+@media only screen and (max-width: 59.375rem) {
+  .side-nav__item {
+    flex: 1;
+  }
+}
 .side-nav__link:link, .side-nav__link:visited {
   color: var(--Color-Grey-light-1);
   text-decoration: none;
@@ -239,11 +312,31 @@ body {
   position: relative;
   z-index: 10;
 }
+@media only screen and (max-width: 59.375rem) {
+  .side-nav__link:link, .side-nav__link:visited {
+    justify-content: center;
+    padding: 2rem;
+  }
+}
+@media only screen and (max-width: 37.5rem) {
+  .side-nav__link:link, .side-nav__link:visited {
+    flex-direction: column;
+    padding: 1.5rem 0.5rem;
+  }
+}
 .side-nav__icon {
   width: 1.75rem;
   height: 1.75rem;
   fill: currentColor;
   margin-right: 2rem;
+}
+@media only screen and (max-width: 37.5rem) {
+  .side-nav__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* ---- SIDE NAVIGATION --> LEGAL TEXT-----*/
@@ -252,6 +345,11 @@ body {
   padding: 2.5rem;
   text-align: center;
   color: var(--Color-Grey-light-4);
+}
+@media only screen and (max-width: 59.375rem) {
+  .legal {
+    display: none;
+  }
 }
 
 /* ---- HOTEL VIEW --> GALLARY-----*/
@@ -277,6 +375,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 1.5rem 3rem;
+}
+@media only screen and (max-width: 37.5rem) {
+  .overview__heading {
+    font-size: 1.75rem;
+    padding: 1.5rem 2rem;
+  }
 }
 .overview__stars {
   margin-right: auto;
@@ -306,14 +410,29 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 37.5rem) {
+  .overview__rating {
+    padding: 0 1.5rem;
+  }
+}
 .overview__rating-average {
   font-size: 2.25rem;
   font-weight: 300;
   margin-bottom: -3px;
 }
+@media only screen and (max-width: 37.5rem) {
+  .overview__rating-average {
+    font-size: 1.75rem;
+  }
+}
 .overview__rating-count {
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+@media only screen and (max-width: 37.5rem) {
+  .overview__rating-count {
+    font-size: 0.6rem;
+  }
 }
 
 .btn-inline {
@@ -393,6 +512,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.recomend__friends {
+  display: flex;
+}
 .recomend__friends--photo {
   box-sizing: content-box;
   height: 4rem;
@@ -401,7 +523,7 @@ body {
   border: 3px solid white;
 }
 .recomend__friends--photo:not(:last-child) {
-  margin-right: -1.5rem;
+  margin-right: -2rem;
 }
 
 .review {
@@ -411,6 +533,12 @@ body {
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+}
+@media only screen and (max-width: 59.375rem) {
+  .review {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 }
 .review__text {
   margin-bottom: 2rem;
@@ -461,11 +589,22 @@ body {
   padding: 3.5rem 0;
   text-align: center;
 }
+@media only screen and (max-width: 59.375rem) {
+  .cta {
+    padding: 2rem 0;
+  }
+}
 .cta__book-now {
   font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 3.5rem;
+}
+@media only screen and (max-width: 59.375rem) {
+  .cta__book-now {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+  }
 }
 
 .btn {
@@ -479,6 +618,11 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+}
+@media only screen and (max-width: 59.375rem) {
+  .btn {
+    font-size: 1.2rem;
+  }
 }
 .btn__visible {
   display: inline-block;

@@ -17,6 +17,12 @@
   --font-Open: "Open Sans", sans-serif;
 }
 
+$bp_large: 75rem; //1200px
+$bp_1100: 68.75rem; //1100px
+$bp_950: 59.375rem; //9500px
+$bp_600: 37.5rem; //600px
+$bp_450: 28.125rem; // 450px
+
 * {
   margin: 0;
   padding: 0;
@@ -29,6 +35,12 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  @media only screen and (max-width: $bp_1100) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: $bp_600) {
+    font-size: 50%;
+  }
 }
 
 body {

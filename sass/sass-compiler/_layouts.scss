@@ -1,19 +1,34 @@
+@use "../sass-compiler/base" as *;
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--Color-Grey-light-2);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+
+  @media only screen and (max-width: $bp_large) {
+    margin: 0;
+    width: 100%;
+  }
 }
 
 .header {
   height: 7rem;
   background-color: white;
   border-bottom: 1px solid var(--Color-Grey-light-1);
+  @media only screen and (max-width: $bp_450) {
+    flex-wrap: wrap;
+    height: 10rem;
+    align-content: space-around;
+  }
 }
 
 .content {
   display: flex;
+  @media only screen and (max-width: $bp_950) {
+    flex-direction: column;
+  }
 }
 
 .side-bar {
@@ -34,6 +49,12 @@
   padding: 4.5rem;
   background-color: var(--Color-Grey-light-2);
   font-size: 1.4rem;
+  @media only screen and (max-width: $bp_950) {
+    padding: 3rem;
+  }
+  @media only screen and (max-width: $bp_600) {
+    flex-direction: column;
+  }
 }
 
 .descrition {
@@ -44,6 +65,14 @@
   border-bottom: var(--border-line);
   box-shadow: 0 2rem 5rem rgba($color: #000000, $alpha: 0.06);
   padding: 3rem;
+  @media only screen and (max-width: $bp_950) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+  @media only screen and (max-width: $bp_600) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
 }
 .user-review {
   flex: 1;

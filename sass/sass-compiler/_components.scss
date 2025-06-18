@@ -1,3 +1,5 @@
+@use "../sass-compiler/base" as *;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -14,7 +16,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    @media only screen and (max-width: $bp_450) {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--Color-Grey-light-2);
+    }
     &-input {
       font-family: var(--font-roboto);
       font-size: 1.4rem;
@@ -114,11 +120,18 @@
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3rem;
+  @media only screen and (max-width: $bp_950) {
+    display: flex;
+    margin: 0;
+  }
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media only screen and (max-width: $bp_950) {
+        margin: 0;
+      }
     }
     &::before {
       content: "";
@@ -140,6 +153,9 @@
     &:active::before {
       background-color: var(--Color-Primary-light);
     }
+    @media only screen and (max-width: $bp_950) {
+      flex: 1;
+    }
   }
 
   &__link:link,
@@ -153,6 +169,14 @@
     align-items: center;
     position: relative;
     z-index: 10;
+    @media only screen and (max-width: $bp_950) {
+      justify-content: center;
+      padding: 2rem;
+    }
+    @media only screen and (max-width: $bp_600) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -160,6 +184,12 @@
     height: 1.75rem;
     fill: currentColor;
     margin-right: 2rem;
+    @media only screen and (max-width: $bp_600) {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
   }
 }
 
@@ -169,6 +199,9 @@
   padding: 2.5rem;
   text-align: center;
   color: var(--Color-Grey-light-4);
+  @media only screen and (max-width: $bp_950) {
+    display: none;
+  }
 }
 
 /* ---- HOTEL VIEW --> GALLARY-----*/
@@ -193,6 +226,10 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+    @media only screen and (max-width: $bp_600) {
+      font-size: 1.75rem;
+      padding: 1.5rem 2rem;
+    }
   }
 
   &__stars {
@@ -225,14 +262,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @media only screen and (max-width: $bp_600) {
+      padding: 0 1.5rem;
+    }
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
       margin-bottom: -3px;
+      @media only screen and (max-width: $bp_600) {
+        font-size: 1.75rem;
+      }
     }
     &-count {
       font-size: 0.8rem;
       text-transform: uppercase;
+      @media only screen and (max-width: $bp_600) {
+        font-size: 0.6rem;
+      }
     }
   }
 }
@@ -324,6 +370,7 @@
   align-items: center;
   justify-content: space-between;
   &__friends {
+    display: flex;
     &--photo {
       box-sizing: content-box;
       height: 4rem;
@@ -332,7 +379,7 @@
       border: 3px solid white;
     }
     &--photo:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -345,6 +392,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+  @media only screen and (max-width: $bp_950) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
   &__text {
     margin-bottom: 2rem;
     z-index: 10;
@@ -401,12 +453,18 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
-
+  @media only screen and (max-width: $bp_950) {
+    padding: 2rem 0;
+  }
   &__book-now {
     font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 3.5rem;
+    @media only screen and (max-width: $bp_950) {
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -425,6 +483,9 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  @media only screen and (max-width: $bp_950) {
+    font-size: 1.2rem;
+  }
   &__visible {
     display: inline-block;
     padding: 2rem 7.5rem;
